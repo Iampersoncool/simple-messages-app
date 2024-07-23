@@ -6,8 +6,6 @@ export const DB = createClient({
 })
 
 export const runMigrations = async () => {
-  await DB.execute('PRAGMA journal_mode = wal;')
-
   await DB.execute(`
   CREATE TABLE 
   IF NOT EXISTS messages(
