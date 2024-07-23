@@ -3,9 +3,9 @@ import { cors } from 'hono/cors'
 
 import messagesRouter from './messages'
 
-import { runOptimizations } from './database'
+import { runMigrations } from './database'
 
-await runOptimizations()
+await runMigrations()
 
 const app = new Hono()
   .use(cors())

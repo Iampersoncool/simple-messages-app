@@ -5,7 +5,7 @@ export const DB = createClient({
   authToken: process.env.TURSO_AUTH_TOKEN,
 })
 
-export const runOptimizations = async () => {
+export const runMigrations = async () => {
   await DB.execute('PRAGMA journal_mode = wal;')
 
   await DB.execute(`
