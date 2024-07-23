@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple messages app concept</title>
+    <style>
+      #messages {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .message {
+        padding: 0.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="messagesForm" action="/messages" method="post">
+      <input type="color" value="#e66465" name="color" required id="color" />
+      <input
+        type="text"
+        name="content"
+        required
+        placeholder="content"
+        id="content"
+      />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="results"></div>
+
+    <div id="messages"></div>
+
+    <script type="module" src="./src/main.ts"></script>
+    <script type="module" src="./src/load_messages.ts"></script>
+  </body>
+</html>
